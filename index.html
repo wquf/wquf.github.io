@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>시험까지 남은 시간! 📝</title>
+        <script>
+            const examination = 1687903200000
+
+            function swap(element) {
+                var now = Date.now()
+                
+                var days = (examination - now) / (1000 * 60 * 60 * 24)
+                if (days < 0) days *= -1
+                var hours = (examination - now) % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)
+                if (hours < 0) hours *= -1
+                var minutes = (examination - now) % (1000 * 60 * 60 * 24) % (1000 * 60 * 60) / (1000 * 60)
+                if (minutes < 0) minutes *= -1
+                var seconds = (examination - now) % (1000 * 60 * 60 * 24) % (1000 * 60 * 60) % (1000 * 60) / 1000
+                if (seconds < 0) seconds *= -1
+                
+                element.textContent = `${Math.ceil(days)}일 ${Math.ceil(hours)}시간 ${Math.ceil(minutes)}분 ${seconds.toFixed(2)}초`
+            }   
+
+            function start() {
+                const remaining = document.getElementById('Remaining')
+                return setInterval(swap, 1, remaining)
+            }
+        </script>
+    </head>
+    <body class="default" onload="start()">
+        <div>
+            <div class="center" id="Title">📝 시험까지 남은 시간! 📝</div>
+            <article class="center" id="Remaining">로딩 중...</article>
+        </div>
+    </body>
+    <style>
+        .center {
+            text-align: center;
+            vertical-align: middle;
+        }
+        #Title {
+            font-size: 64px
+        }
+        #Remaining {
+            font-size: 94px;
+        }
+    </style>
+</html>
