@@ -26,7 +26,7 @@ function change_innerhtml(element, text) {
 
 function update_tip(element) {
     var index = Math.floor(Math.random() * tips.length);
-    return change_innerhtml(element, `<div id="Tip" style="font-size: 23px;">${tips[index][0]} <sub>${tips[index][1]}</sub></div>`)
+    return change_innerhtml(element, `${tips[index][0]} <sub>${tips[index][1]}</sub>`)
 }
 
 function update_time(element) {
