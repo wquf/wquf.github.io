@@ -39,7 +39,7 @@ function update_time(element) {
     else if (days <= 0) {
         return change(element, '오늘입니다! 힘내세요!')
     }
-    var hours = 24 - now.getHours()
+    var hours = 23 - now.getHours()
     var minutes = 60 - now.getMinutes()
     var seconds = 60 - now.getSeconds()
     
