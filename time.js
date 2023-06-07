@@ -33,10 +33,10 @@ function update_time(element) {
     now = new Date(now)
 
     var days = 28 - now.getDate() - 1
-    if (Math.ceil(days) == 1) {
+    if (days == 1) {
         return change(element, '내일입니다!')
     }
-    else if (Math.ceil(days) <= 0) {
+    else if (days <= 0) {
         return change(element, '오늘입니다! 힘내세요!')
     }
     var hours = 24 - now.getHours()
