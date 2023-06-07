@@ -40,8 +40,8 @@ function update_time(element) {
         return change(element, '오늘입니다! 힘내세요!')
     }
     var hours = 24 - now.getHours()
-    var minutes = 60 - now.getMinutes() 
-    var seconds = 60 - Math.abs(examination.getSeconds() - now.getSeconds())
+    var minutes = 60 - now.getMinutes()
+    var seconds = 60 - now.getSeconds()
     
     return change_text(element, `${Math.ceil(days)}일 ${Math.ceil(hours)}시간 ${Math.ceil(minutes)}분 ${seconds}초`)
 }   
