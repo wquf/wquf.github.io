@@ -1,4 +1,3 @@
-const examination = new Date(2023, 6, 28)
 const tips = [
     ['굳은 결심은 가장 유용한 지식이다.', '- 나폴레옹'],
     ['10분뒤와 10년 후를 동시에 생각하라.', '- 피터 드리커'],
@@ -33,7 +32,7 @@ function update_time(element) {
     var now = Date.now()
     now = new Date(now)
 
-    var days = examination.getDate() - now.getDate() - 1
+    var days = 28 - now.getDate() - 1
     if (Math.ceil(days) == 1) {
         return change(element, '내일입니다!')
     }
@@ -41,7 +40,7 @@ function update_time(element) {
         return change(element, '오늘입니다! 힘내세요!')
     }
     var hours = 24 - now.getHours()
-    var minutes = 60 - Math.abs(examination.getMinutes() - now.getMinutes())
+    var minutes = 60 - now.getMinutes() 
     var seconds = 60 - Math.abs(examination.getSeconds() - now.getSeconds())
     
     return change_text(element, `${Math.ceil(days)}일 ${Math.ceil(hours)}시간 ${Math.ceil(minutes)}분 ${seconds}초`)
