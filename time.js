@@ -1,4 +1,4 @@
-const examination = 1687878000000
+const examination = new Date(1687878000000)
 const tips = [
     ['굳은 결심은 가장 유용한 지식이다.', '- 나폴레옹'],
     ['10분뒤와 10년 후를 동시에 생각하라.', '- 피터 드리커'],
@@ -31,19 +31,20 @@ function update_tip(element) {
 
 function update_time(element) {
     var now = Date.now()
+    now = new Date(now)
 
-    var days = (examination - now) / (1000 * 60 * 60 * 24)    
+    var days = examination.getDate() - now.getDate()
     if (Math.ceil(days) == 1) {
         return change(element, '내일입니다!')
     }
-    else if (Math.ceil(days) == 0) {
+    else if (Math.ceil(days) <= 0) {
         return change(element, '오늘입니다! 힘내세요!')
     }
-    var hours = Math.abs((examination - now) % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
-    var minutes = Math.abs((examination - now) % (1000 * 60 * 60 * 24) % (1000 * 60 * 60) / (1000 * 60))
-    var seconds = Math.abs((examination - now) % (1000 * 60 * 60 * 24) % (1000 * 60 * 60) % (1000 * 60) / 1000)
+    var hours = Math.abs(examination.getHours() - now.getHours())
+    var minutes = Math.abs(examination.getMinutes() - now.getMinutes())
+    var seconds = Math.abs(examination.getSeconds() - now.getSeconds())
     
-    return change_text(element, `${Math.ceil(days)}일 ${Math.ceil(hours)}시간 ${Math.ceil(minutes)}분 ${seconds.toFixed(2)}초`)
+    return change_text(element, `${Math.ceil(days)}일 ${Math.ceil(hours)}시간 ${Math.ceil(minutes)}분 ${seconds}초`)
 }   
 
 function initialise() {
