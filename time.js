@@ -1,4 +1,4 @@
-const examination = new Date(1687878000000)
+const examination = new Date(2023, 6, 23)
 const tips = [
     ['굳은 결심은 가장 유용한 지식이다.', '- 나폴레옹'],
     ['10분뒤와 10년 후를 동시에 생각하라.', '- 피터 드리커'],
