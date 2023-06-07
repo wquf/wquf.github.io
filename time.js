@@ -32,7 +32,7 @@ function update_time(element) {
     var now = Date.now()
     now = new Date(now)
 
-    var days = 28 - now.getDate() - 1
+    var days = 27 - now.getDate()
     if (days == 1) {
         return change(element, '내일입니다!')
     }
