@@ -3,15 +3,18 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>시험까지 남은 시간! 📝</title>
-        <script src="./time.js"></script>
+        <script src="time.js"></script>
+        <style>
+            div {
+                text-align: center;
+            }
+        </style>
     </head>
     <body onload="initialise()">
-        <div>
-            <div style="text-align: center; font-size: 19px;" id="Title">📝 시험까지 남은 시간! 📝</div>
-            <hr>
-                <div style="text-align: center; font-size: 23px;"><sub>남은 시간</sub></div>
-            </hr>
-            <div style="text-align: center; font-size: 32px;" id="Remaining">Loading...</div>
-        </div>
+        <p>
+            <div style="font-size: 19px;">📝 시험까지 남은 시간! 📝</div>
+            <hr><div id="Tip" style="font-size: 23px;">Loading... <sub id="Person">Loading...</sub></div></hr>
+            <div style="font-size: 32px" id="Remaining">Loading...</div>
+        </p>
     </body>
 </html>
