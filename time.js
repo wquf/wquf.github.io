@@ -33,16 +33,16 @@ function update_time(element) {
     var now = Date.now()
     now = new Date(now)
 
-    var days = examination.getDate() - now.getDate()
+    var days = examination.getDate() - now.getDate() - 1
     if (Math.ceil(days) == 1) {
         return change(element, '내일입니다!')
     }
     else if (Math.ceil(days) <= 0) {
         return change(element, '오늘입니다! 힘내세요!')
     }
-    var hours = Math.abs((examination.getHours() % 12 || 12) - (now.getHours() % 12 || 12))
-    var minutes = Math.abs(examination.getMinutes() - now.getMinutes())
-    var seconds = Math.abs(examination.getSeconds() - now.getSeconds())
+    var hours = Math.abs(examination.getHours() - now.getHours())
+    var minutes = 60 - Math.abs(examination.getMinutes() - now.getMinutes())
+    var seconds = 60 - Math.abs(examination.getSeconds() - now.getSeconds())
     
     return change_text(element, `${Math.ceil(days)}일 ${Math.ceil(hours)}시간 ${Math.ceil(minutes)}분 ${seconds}초`)
 }   
