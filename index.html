@@ -6,7 +6,7 @@
         <script>
             const examination = 1687903200000
 
-            function swap(element) {
+            function update(element) {
                 var now = Date.now()
                 
                 var days = (examination - now) / (1000 * 60 * 60 * 24)
@@ -21,27 +21,17 @@
                 element.textContent = `${Math.ceil(days)}일 ${Math.ceil(hours)}시간 ${Math.ceil(minutes)}분 ${seconds.toFixed(2)}초`
             }   
 
-            function start() {
+            function initialise() {
                 const remaining = document.getElementById('Remaining')
-                return setInterval(swap, 1, remaining)
+                return setInterval(update, 1, remaining)
             }
         </script>
     </head>
-    <body class="default" onload="start()">
+    <body onload="initialise()">
         <div>
-            <div class="center" id="Title">📝 시험까지 남은 시간! 📝</div>
-            <article class="center" id="Remaining">로딩 중...</article>
+            <div style="text-align: center; font-size: 19px;" id="Title">📝 시험까지 남은 시간! 📝</div>
+            <hr></hr>
+            <div style="text-align: center; font-size: 32px;" id="Remaining">로딩 중...</div>
         </div>
     </body>
-    <style>
-        .center {
-            text-align: center;
-        }
-        #Title {
-            font-size: 19px
-        }
-        #Remaining {
-            font-size: 32px;
-        }
-    </style>
 </html>
