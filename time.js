@@ -40,7 +40,7 @@ function update_time(element) {
     else if (Math.ceil(days) <= 0) {
         return change(element, '오늘입니다! 힘내세요!')
     }
-    var hours = Math.abs(examination.getHours() - (now.getHours() % 12 || 12))
+    var hours = Math.abs((examination.getHours() % 12 || 12) - (now.getHours() % 12 || 12))
     var minutes = Math.abs(examination.getMinutes() - now.getMinutes())
     var seconds = Math.abs(examination.getSeconds() - now.getSeconds())
     
