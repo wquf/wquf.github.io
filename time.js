@@ -46,6 +46,6 @@ function Initialize() {
     UpdateTip(tip)
     UpdateTime(remaining)
     setInterval(UpdateTip, 10000, tip)
-    setInterval(UpdateTime, 1, remaining)
+    setInterval(UpdateTime, 1000, remaining)
     return null
 }
