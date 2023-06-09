@@ -32,7 +32,7 @@ function UpdateTime(element) {
         element.textContent = '오늘입니다! 힘내세요!'
         return null
     }
-    var hours = 24 - now.getHours()
+    var hours = 23 - now.getHours()
     var minutes = 60 - now.getMinutes()
     var seconds = 60 - now.getSeconds()
     
