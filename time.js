@@ -16,16 +16,11 @@ const tips = [
 function ChangeTextContent(element, text) {
     element.textContent = text
     return null
-}
-
-function ChangeHTML(element, text) {
-    element.innerHTML = text
-    return null
-}
+} 
 
 function UpdateTip(element) {
     var index = Math.floor(Math.random() * tips.length);
-    return ChangeHTML(element, `${tips[index][0]} <sub>${tips[index][1]}</sub>`)
+    element.innerHTML = `${tips[index][0]} <sub>${tips[index][1]}</sub>`
 }
 
 function UpdateTime(element) {
@@ -43,7 +38,7 @@ function UpdateTime(element) {
     var minutes = 60 - now.getMinutes()
     var seconds = 60 - now.getSeconds()
     
-    return ChangeTextContent(element, `${Math.ceil(days)}일 ${Math.ceil(hours)}시간 ${Math.ceil(minutes)}분 ${seconds}초`)
+    return ChangeTextContent(element, `${days}일 ${hours}시간 ${minutes}분 ${seconds}초`)
 }   
 
 function Initialize() {
