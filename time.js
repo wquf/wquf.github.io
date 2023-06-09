@@ -13,22 +13,22 @@ const tips = [
     ['사람에게 필요한 것은 행동이다.', '- 브론테']
 ]
 
-function change_text(element, text) {
+function ChangeTextContent(element, text) {
     element.textContent = text
     return null
 }
 
-function change_innerhtml(element, text) {
+function ChangeHTML(element, text) {
     element.innerHTML = text
     return null
 }
 
-function update_tip(element) {
+function UpdateTip(element) {
     var index = Math.floor(Math.random() * tips.length);
-    return change_innerhtml(element, `${tips[index][0]} <sub>${tips[index][1]}</sub>`)
+    return ChangeHTML(element, `${tips[index][0]} <sub>${tips[index][1]}</sub>`)
 }
 
-function update_time(element) {
+function UpdateTime(element) {
     var now = Date.now()
     now = new Date(now)
 
@@ -43,15 +43,15 @@ function update_time(element) {
     var minutes = 60 - now.getMinutes()
     var seconds = 60 - now.getSeconds()
     
-    return change_text(element, `${Math.ceil(days)}일 ${Math.ceil(hours)}시간 ${Math.ceil(minutes)}분 ${seconds}초`)
+    return ChangeTextContent(element, `${Math.ceil(days)}일 ${Math.ceil(hours)}시간 ${Math.ceil(minutes)}분 ${seconds}초`)
 }   
 
-function initialise() {
+function Initialize() {
     const remaining = document.getElementById('Remaining')
     const tip = document.getElementById('Tip')
-    update_tip(tip)
-    update_time(remaining)
-    setInterval(update_tip, 5000, tip)
-    setInterval(update_time, 1, remaining)
+    UpdateTip(tip)
+    UpdateTime(remaining)
+    setInterval(UpdateTip, 10000, tip)
+    setInterval(UpdateTime, 1, remaining)
     return null
 }
