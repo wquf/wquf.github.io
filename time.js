@@ -15,7 +15,7 @@ const tips = [
 
 function UpdateTip(element) {
     var index = Math.floor(Math.random() * tips.length);
-    element.innerHTML = `${tips[index][0]} <sub>${tips[index][1]}</sub>`
+    element.innerHTML = `${tips[index][0]} <div style="font-size: 16px;">${tips[index][1]}</div>`
     return null
 }
 
