@@ -13,14 +13,10 @@ const tips = [
     ['사람에게 필요한 것은 행동이다.', '- 브론테']
 ]
 
-function ChangeTextContent(element, text) {
-    element.textContent = text
-    return null
-} 
-
 function UpdateTip(element) {
     var index = Math.floor(Math.random() * tips.length);
     element.innerHTML = `${tips[index][0]} <sub>${tips[index][1]}</sub>`
+    return null
 }
 
 function UpdateTime(element) {
@@ -29,16 +25,19 @@ function UpdateTime(element) {
 
     var days = 27 - now.getDate()
     if (days == 1) {
-        return ChangeTextContent(element, '내일입니다!')
+        element.textContent = '내일입니다!'
+        return null
     }
     else if (days <= 0) {
-        return ChangeTextContent(element, '오늘입니다! 힘내세요!')
+        element.textContent = '오늘입니다! 힘내세요!'
+        return null
     }
     var hours = 24 - now.getHours()
     var minutes = 60 - now.getMinutes()
     var seconds = 60 - now.getSeconds()
     
-    return ChangeTextContent(element, `${days}일 ${hours}시간 ${minutes}분 ${seconds}초`)
+    element.textContent = `${days}일 ${hours}시간 ${minutes}분 ${seconds}초`
+    return null
 }   
 
 function Initialize() {
