@@ -34,10 +34,10 @@ function UpdateTime(element) {
 
     var days = 27 - now.getDate()
     if (days == 1) {
-        return change(element, '내일입니다!')
+        return ChangeTextContent(element, '내일입니다!')
     }
     else if (days <= 0) {
-        return change(element, '오늘입니다! 힘내세요!')
+        return ChangeTextContent(element, '오늘입니다! 힘내세요!')
     }
     var hours = 24 - now.getHours()
     var minutes = 60 - now.getMinutes()
