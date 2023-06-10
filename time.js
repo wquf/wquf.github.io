@@ -28,8 +28,12 @@ function UpdateTime(element) {
         element.textContent = '내일입니다!'
         return null
     }
-    else if (days <= 0) {
+    else if (days == 0 || days == -1) {
         element.textContent = '오늘입니다! 힘내세요!'
+        return null
+    }
+    else if (days < -1) {
+        element.textContent = '이미 지났네요.'
         return null
     }
     var hours = 23 - now.getHours()
