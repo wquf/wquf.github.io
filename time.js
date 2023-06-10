@@ -23,15 +23,15 @@ function UpdateTime(element) {
     var now = new Date(Date.now())
 
     var days = 27 - now.getDate()
-    if (days == 1) {
+    if (days == 0) {
         element.textContent = '내일입니다!'
         return null
     }
-    else if (days == 0 || days == -1) {
+    else if (days == -1) {
         element.textContent = '오늘입니다! 힘내세요!'
         return null
     }
-    else if (days < -1) {
+    else if (days < -2) {
         element.textContent = '이미 지났네요.'
         return null
     }
