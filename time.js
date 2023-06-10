@@ -20,8 +20,7 @@ function UpdateTip(element) {
 }
 
 function UpdateTime(element) {
-    var now = Date.now()
-    now = new Date(now)
+    var now = new Date(Date.now())
 
     var days = 27 - now.getDate()
     if (days == 1) {
