@@ -36,8 +36,8 @@ function UpdateTime(element) {
         return null
     }
     var hours = 23 - now.getHours()
-    var minutes = 60 - now.getMinutes()
-    var seconds = 60 - now.getSeconds()
+    var minutes = 59 - now.getMinutes()
+    var seconds = 59 - now.getSeconds()
     
     element.textContent = `${days}일 ${hours}시간 ${minutes}분 ${seconds}초`
     return null
