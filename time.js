@@ -13,7 +13,7 @@ const tips = [
     ['사람에게 필요한 것은 행동이다.', '- 브론테']
 ]
 
-function UpdateTip(element) {
+function UpdateTip(element) { 
     var index = Math.floor(Math.random() * tips.length);
     element.innerHTML = `${tips[index][0]} <div style="font-size: 16px;">${tips[index][1]}</div>`
     return null
