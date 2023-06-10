@@ -31,7 +31,7 @@ function UpdateTime(element) {
         element.textContent = '오늘입니다! 힘내세요!'
         return null
     }
-    else if (days < -2) {
+    else if (days <= -2) {
         element.textContent = '이미 지났네요.'
         return null
     }
