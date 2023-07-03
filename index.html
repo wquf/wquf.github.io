@@ -1,123 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate"/>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-
-        <title>📝 시험까지 남은 시간!</title>
-
-        <style>
-            @font-face {
-                font-family: 'NotoSerifKR';
-                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff') format('woff');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            @font-face {
-                font-family: 'GmarketSansMedium';
-                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            * {
-                text-align: center;
-                color: #ffffff;
-            }
-
-            body {
-                background-color: #181a1b;
-            }
-
-            #dictum {
-                font-family: 'NotoSerifKR';
-                font-size: 23px;
-                color: #feca0a;
-            }
-
-            #remaining {
-                font-family: 'GmarketSansMedium';
-                font-weight: bold;
-                font-size: 32px;
-            }
-        </style>
-
-        <script>
-            customElements.define(
-                'dictum-tips', 
-                class extends HTMLElement {
-                    constructor() {
-                        super()
-                    }
-                    connectedCallback() {   
-                        const dictums = [
-                            '하얀 건 종이요, 까만 건 글씨로다.',
-                            '늦었다고 생각할 때가 진짜 너무 늦었다',
-                            '정신차려 이 각박한 세상 속에서',
-                            '이게 뭐 하는 거야 지금',
-                            '세상은 1등만 기억해',
-                            '지금 연애하면 인생 망가져요',
-                            '나오는 건 한숨 뿐',
-                            '꼴통이지 꼴통',
-                            '안 죽는다! 일어나!',
-                            '진짜 얘는 매를 부른다',
-                            '생각을 조금만 하면 되는데 그걸 노력을 안 한 거야',
-                        ]              
-                        const dictum = Object.assign(document.createElement('div'), {id: 'dictum', textContent: '격언'})
-                        this.appendChild(dictum)
-                        setInterval(function() {
-                            dictum.textContent = dictums[Math.floor(Math.random() * dictums.length)]
-                            return null
-                        }(), 5000)
-                    }
-                }
-            )
-            customElements.define(
-                'time-remaining', 
-                class extends HTMLElement {
-                    constructor() {
-                        super()
-                    }
-                    connectedCallback() {   
-                        const remaining = Object.assign(document.createElement('div'), {id: 'remaining', textContent: '현재 시간'})
-                        this.appendChild(remaining)
-                        
-                        const timer = () => {
-                            let now = new Date(Date.now())
-                            var days = 27 - now.getDate()
-                            if (days == 0) {
-                                element.textContent = '내일입니다!'
-                                return null
-                            }
-                            else if (days == -1) {
-                                element.textContent = '오늘입니다! 힘내세요!'
-                                return null
-                            }
-                            else if (days <= -2) {
-                                element.textContent = '이미 지났네요.'
-                                return null
-                            }
-                            var hours = 23 - now.getHours()
-                            var minutes = 59 - now.getMinutes()
-                            var seconds = 59 - now.getSeconds()
-                            
-                            remaining.textContent = `${days}일 ${hours}시간 ${minutes}분 ${seconds}초`
-                            return null
-                        }
-                        timer()
-                        setInterval(timer, 1000)
-                    }
-                }
-            )
-        </script>
+        <title>시험까지 남은 시간 📝</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="./styles/fonts.css">
+        <link rel="stylesheet" href="./styles/styles.css">
     </head>
 
     <body>
-        <p style="font-family: 'GmarketSansMedium'; font-weight: bold; font-size: 19px;">📝 시험까지 남은 시간! 📝</p>
-        <hr></hr>
-        <dictum-tips></dictum-tips>
-        <time-remaining></time-remaining>
+        <button id="title">시험까지 남은 시간 📝</button>
+        <hr>
+        <button id="timer">로딩 중...</button>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script src="./scripts/easterEggs.js"></script>
+        <script src="./scripts/examinationTimer.js"></script>
     </body>
 </html>
