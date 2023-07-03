@@ -15,6 +15,7 @@ body {
 }
 
 #timer {
+    border: 0;
     font-family: 'SBAggroB';
     font-size: 64px;
 }
