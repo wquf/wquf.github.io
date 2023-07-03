@@ -16,7 +16,7 @@ timer.on(
         timer.attr('class', 'animate__animated animate__jello');
         return timer.on(
             'animationend', () => {
-                return title.attr('class', null);
+                return timer.attr('class', null);
             },
         );
     },
