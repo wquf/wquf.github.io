@@ -1,0 +1,20 @@
+* {
+    color: #ffffff;
+    background-color: transparent;
+    text-align: center;
+}
+
+body {
+    background-color: #646464;
+}
+
+#title {
+    border: 0;
+    font-family: 'KBO-Dia-Gothic_bold';
+    font-size: 32px;
+}
+
+#timer {
+    font-family: 'SBAggroB';
+    font-size: 64px;
+}
